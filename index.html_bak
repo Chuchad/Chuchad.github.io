@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beilin Chu - Personal Homepage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .header div {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .news li, .experience li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .news li span, .experience li span {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .contact a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        .small-text {
+        font-size: 16px; /* 设置较小的字体大小 */
+        }
+        .posts{
+        /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+        font-size: 14px;
+        }
+        .post{
+        border-left: 5px solid rgba(202, 202, 202, 0.588);
+        }
+        .posts .teaser{
+        align:center;
+        width: 100%;
+  /*      height: 20%;*/
+        overflow: hidden;
+  /*        width: 200px;*/
+  /*        height: 350px;*/
+        height: 50%;
+        float: left;
+        margin: 0 0 0 10px;
+        }
+        .posts .teaser-left{
+        margin: 0 auto;
+        max-width:300px;
+        max-height:150px;
+        display: block;
+        width: auto;
+        height: auto;
+        }
+        .teaser-container{
+        float: left;
+        width: 300px;  
+        height: 180px;
+
+        margin-right: 20px;  
+        margin-left: 20px;  
+        }
+        .post-hidden{
+          display: none;
+        }
+        a{
+        color: #111;
+        position: relative;
+        }
+        a:after{
+        content: '';
+        position: absolute;
+        top: 60%;
+        left: -0.1em;
+        right: -0.1em;
+        bottom: 0;
+        transition:top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+        /*background-color: rgba(225, 166, 121, 0.5);*/
+        background-color: rgba(255, 210, 30, 0.346);
+        }
+        .emojilink:after{
+          background-color: rgba(255,211,30, 0.0) 
+          /*rgba(225, 166, 121, 0.0);*/
+        }
+        a:hover{
+        color:rgb(180, 255, 248);
+        }
+        a:hover:after{
+        color:rgb(180, 255, 248);
+        /*color: #111;*/
+        top:0%;
+        }
+        .xcode a:after{
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition:top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+        /*background-color: rgba(225, 166, 121, 0.5);*/
+        background-color: #fff;
+        }
+        .xcode a:hover:after{
+          color: #fff;
+          /*color: #111;*/
+        }
+        .entry{
+        position: relative;
+        top:0;
+        left: 20px;
+        margin-top: 5px;
+        }
+        .posts > .post{
+        border-bottom: 0;
+        padding-bottom:0em;
+        padding-top: 10px;
+        margin-bottom: 10px;
+        }
+        .papertitle{
+        margin-top: 0px;
+        font-weight: 600;
+        font-size:16px;
+        font-style: italic;
+        /*font-style: italic;*/
+        /*height: 2.6em*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="images/selfie.jpg" alt="Beilin Chu">
+            <div>Beilin Chu<br>PhD Student, Beijing University of Posts and Telecommunications<br>
+                <a class="small-text" target="_blank" href="https://github.com/Chuchad">Github</a> / 
+                <a class="small-text" target="_blank" href="https://www.linkedin.com/in/beilin-chu-8b69731b2/">Linkedin</a> / 
+                <a class="small-text" target="_blank" href="https://scholar.google.com/citations?hl=zh-CN&user=RbrS2lcAAAAJ">Scholar</a> / 
+                <a class="small-text" target="_blank" href="https://openreview.net/profile?id=~Beilin_Chu1">OpenReview</a></a></div>
+        </div>
+        
+        <h2>Biography</h2>
+        <p>I am a PhD student at the School of Cyberspace Security, BUPT, supervised by Prof. <a href="https://scss.bupt.edu.cn/info/1063/3295.htm" target="_blank">Linna Zhou</a>. I am working on multimodal models and image forensics. My research focuses on generalizable AI-generated content detection, lightweight cross-domain adaptation, and multimodal learning strategies.</p>
+        
+        <h2>Publication</h2>
+
+        <div class="posts">
+          {% for post in site.posts %}
+        
+            {% if post.is_show %}
+            <article class="post">
+         
+            {% else %}
+            <article class="post unimportant post-hidden">
+        
+            {% endif %}
+        
+              <!-- <div style="position: relative; left:-50px; font-size: 18px;">{{post.year}}</div> -->
+        
+              <!-- <div style="text-align:center;"><img class="teaser-img" src="{{post.teaser}}"> </div> -->
+        
+              <div class= "teaser-container">
+                <img class="teaser-left"  src="{{post.teaser}}">
+              </div>
+        
+              <div class= "papertitle entry" >{{ post.title }}</div>
+        
+              <div class="entry">
+                {{ post.authors }}
+              </div>
+        
+              <div class="entry">
+                  <i>{{post.publication}}</i>, <i>{{post.year}}</i>
+                  {% if post.journal%}
+                   /
+                    <i>{{post.journal}}</i>, <i>{{post.year}}</i>
+                  {% endif %}  
+              </div>
+        
+              <div class="entry">
+                
+                {% if post.arxiv%}
+                <a class='links' target="_blank" href="{{ post.arxiv_url }}" rel="paperurl">arXiv</a>
+                {% else %} 
+                <a class='links' target="_blank" href="{{ post.URL }}" rel="paperurl">Link</a>
+                {% endif %}       
+        
+                {% if post.extented_url%}
+                /
+                <a class='links' target="_blank" href="{{ post.extented_url }}" rel="paperurl">Extended Version</a>
+                {% endif %}       
+                
+                {% if post.demo%}
+                /
+                <a class='links' target="_blank" href="{{ post.demo }}" rel="paperurl">Online Demo</a> 
+                {% endif %}
+        
+                {% if post.project%}
+                /
+                <a class='links' target="_blank" href="{{ post.project }}" rel="paperurl">Project Page</a> 
+                {% endif %}
+                
+                {% if post.code%} 
+                /
+                <a target="_blank" href="{{post.code}}">Github</a>
+                {% endif %} 
+        
+                {% if post.code%} 
+                <div style="display: inline-block;float:right" class="xcode">
+                <!-- <a class="github-button" href="{{post.code}}" data-show-count="true">Star</a>  -->
+                <a href="{{post.code}}"><img src="https://img.shields.io/github/stars/{{post.code| replace:'https://github.com/', ''}}?style=social"/></a>
+                </div>
+                {% endif %} 
+        
+                </div>
+              <div style ="clear:both"></div>
+              <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a> -->
+            </article>
+          {% endfor %}
+        </div>
+        
+        <h2>Experience</h2>
+        <ul class="experience">
+            <li><span>[2023-Present]</span> PhD Student, Beijing University of Posts and Telecommunications</li>
+            <li><span>[2020-2023]</span> M.E., Beijing University of Posts and Telecommunications</li>
+            <li><span>[2016-2020]</span> B.E., University of International Relations</li>
+        </ul>
+        
+        <h2>Contact</h2>
+        <button onclick="showEmail()">Show Email</button>
+        <script>
+          function showEmail() {
+            let email = "beilin.chu" + "@bupt.edu";
+            alert("Email: " + email);
+          }
+        </script>
+    </div>
+</body>
+</html>
