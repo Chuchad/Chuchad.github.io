@@ -102,7 +102,13 @@
         </ul>
         
         <h2>Contact</h2>
-        <p class="contact">Email: <a href="mailto:beilin.chu@bupt.edu.cn">beilin.chu@bupt.edu.cn</a></p>
+        <button onclick="showEmail()">Show Email</button>
+        <script>
+          function showEmail() {
+            let email = "beilin.chu" + "@bupt.edu";
+            alert("Email: " + email);
+          }
+        </script>
     </div>
 </body>
 </html>
