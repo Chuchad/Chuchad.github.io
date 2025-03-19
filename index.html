@@ -1,18 +1,88 @@
----
-layout: default
----
-
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beilin Chu - Personal Homepage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .header div {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        h2 {
+            color: #007bff;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        .news li, .experience li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .news li span, .experience li span {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .contact a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="images/profile.jpg" alt="Beilin Chu">
+            <div>Beilin Chu<br>PhD Student, Beijing University of Posts and Telecommunications</div>
+        </div>
+        
+        <h2>Biography</h2>
+        <p>I am a PhD student at BUPT, working on multimodal models and deepfake detection. My research focuses on generalizable AI-generated content detection, lightweight cross-domain adaptation, and multimodal learning strategies.</p>
+        
+        <h2>News</h2>
+        <ul class="news">
+            <li><span>[March 2025]</span> My paper on AIGC image detection is accepted at <b>CVPR 2025</b>!</li>
+            <li><span>[February 2025]</span> Invited as a reviewer for <b>ICLR 2025</b>.</li>
+        </ul>
+        
+        <h2>Experience</h2>
+        <ul class="experience">
+            <li><span>[2023-Present]</span> PhD Student, BUPT</li>
+            <li><span>[2022-2023]</span> Research Assistant, AI Lab</li>
+        </ul>
+        
+        <h2>Contact</h2>
+        <p class="contact">Email: <a href="mailto:beilin.chu@bupt.edu.cn">beilin.chu@bupt.edu.cn</a></p>
+    </div>
+</body>
+</html>
