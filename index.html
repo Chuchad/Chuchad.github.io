@@ -2,12 +2,6 @@
 layout: default
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    
-  <p>{{ post.title }}</p>
-  {% endfor %}
-  </div>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,10 +180,78 @@ layout: default
         <h2>Publication</h2>
 
         <div class="posts">
-        {% for post in site.posts %}
-          
-        <p>{{ post.title }}</p>
-        {% endfor %}
+          {% for post in site.posts %}
+        
+            {% if post.is_show %}
+            <article class="post">
+         
+            {% else %}
+            <article class="post unimportant post-hidden">
+        
+            {% endif %}
+        
+              <!-- <div style="position: relative; left:-50px; font-size: 18px;">{{post.year}}</div> -->
+        
+              <!-- <div style="text-align:center;"><img class="teaser-img" src="{{post.teaser}}"> </div> -->
+        
+              <div class= "teaser-container">
+                <img class="teaser-left"  src="{{post.teaser}}">
+              </div>
+        
+              <div class= "papertitle entry" >{{ post.title }}</div>
+        
+              <div class="entry">
+                {{ post.authors }}
+              </div>
+        
+              <div class="entry">
+                  <i>{{post.publication}}</i>, <i>{{post.year}}</i>
+                  {% if post.journal%}
+                   /
+                    <i>{{post.journal}}</i>, <i>{{post.year}}</i>
+                  {% endif %}  
+              </div>
+        
+              <div class="entry">
+                
+                {% if post.arxiv%}
+                <a class='links' target="_blank" href="{{ post.arxiv_url }}" rel="paperurl">arXiv</a>
+                {% else %} 
+                <a class='links' target="_blank" href="{{ post.URL }}" rel="paperurl">Link</a>
+                {% endif %}       
+        
+                {% if post.extented_url%}
+                /
+                <a class='links' target="_blank" href="{{ post.extented_url }}" rel="paperurl">Extended Version</a>
+                {% endif %}       
+                
+                {% if post.demo%}
+                /
+                <a class='links' target="_blank" href="{{ post.demo }}" rel="paperurl">Online Demo</a> 
+                {% endif %}
+        
+                {% if post.project%}
+                /
+                <a class='links' target="_blank" href="{{ post.project }}" rel="paperurl">Project Page</a> 
+                {% endif %}
+                
+                {% if post.code%} 
+                /
+                <a target="_blank" href="{{post.code}}">Github</a>
+                {% endif %} 
+        
+                {% if post.code%} 
+                <div style="display: inline-block;float:right" class="xcode">
+                <!-- <a class="github-button" href="{{post.code}}" data-show-count="true">Star</a>  -->
+                <a href="{{post.code}}"><img src="https://img.shields.io/github/stars/{{post.code| replace:'https://github.com/', ''}}?style=social"/></a>
+                </div>
+                {% endif %} 
+        
+                </div>
+              <div style ="clear:both"></div>
+              <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a> -->
+            </article>
+          {% endfor %}
         </div>
         
         <h2>Experience</h2>
