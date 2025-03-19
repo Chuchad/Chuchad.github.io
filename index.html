@@ -272,6 +272,8 @@ $(function(){
         
         {% if post.arxiv%}
         <a class='links' target="_blank" href="{{ post.arxiv_url }}" rel="paperurl">arXiv</a>
+        {% else %} 
+        <a class='links' target="_blank" href="{{ post.URL }}" rel="paperurl">Link</a>
         {% endif %}       
 
         {% if post.extented_url%}
