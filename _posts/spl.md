@@ -8,7 +8,7 @@ year: 2022
 venue: 'SPL'
 is_show: ture
 arxiv_url: https://ieeexplore.ieee.org/abstract/document/9882301
-project: 
+project: null
 teaser: ./images/selfie.jpg
 authors: <b>Beilin Chu</b>, Weike You, Zhen Yang, Linna Zhou, Renying Wang
 publication: <b>SPL</b>
