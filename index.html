@@ -180,13 +180,13 @@
         <div class="posts">
           {% for post in site.posts %}
         
-          {% if post.is_show %}
-          <article class="post">
+            {% if post.is_show %}
+            <article class="post">
          
-          {% else %}
-          <article class="post unimportant post-hidden">
+            {% else %}
+            <article class="post unimportant post-hidden">
         
-          {% endif %}
+            {% endif %}
         
               <!-- <div style="position: relative; left:-50px; font-size: 18px;">{{post.year}}</div> -->
         
@@ -214,6 +214,8 @@
                 
                 {% if post.arxiv%}
                 <a class='links' target="_blank" href="{{ post.arxiv_url }}" rel="paperurl">arXiv</a>
+                {% else %} 
+                <a class='links' target="_blank" href="{{ post.URL }}" rel="paperurl">Link</a>
                 {% endif %}       
         
                 {% if post.extented_url%}
