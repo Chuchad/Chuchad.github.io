@@ -5,18 +5,19 @@ layout: default
 
 <style type="text/css">
     .container{
-      margin: 0 auto;
-      width: 100%;
-      max-width: 900px !important;
+      max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
     body{
-        font-weight: 200;
-        font-size: 16px;
-        /*background-color: rgb(43, 60, 197);*/
-        /*color: rgb(0, 79, 241);*/
-        /*color: white;*/
-        border-top:5px solid rgba(202, 202, 202, 0.588);
-        border-bottom:5px solid rgba(202, 202, 202, 0.588);
+      font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
     }
     b{
       color:rgb(0, 79, 241);
@@ -166,8 +167,13 @@ $(function(){
 </div>
 
 </div>
+<div class="posts">
+  {% for post in site.posts %}
 
-<div class="container">
+    <p>{{ post.title }}</p>
+  {% endfor %}
+</div>
+
 <div id="Biography" class='xtitle' >Biography</div>
 <div style="text-align: justify;clear: both;">
          I am a first-year PhD Student in computer science at Peking University (PKU), supervised by Prof. <a href="https://yuanli2333.github.io/" target="_blank">Li Yuan</a> (Deep Learning) and Prof. <a href="http://www2.coe.pku.edu.cn/faculty/mofanyang/index.html" target="_blank">Fanyang Mo</a> (AI4Science). Before that, I was supervised by Prof. <a href="https://sites.google.com/site/baoyuanwu2015/" target="_blank">Baoyuan Wu</a> at The Chinese University of Hong Kong, Shenzhen (CUHK-SZ). I am also honored to be in active cooperation with Prof. <a href="https://cse.buffalo.edu/~siweilyu/" target="_blank">Siwei Lyu</a> (BU), <a href="https://sndler.github.io/" target="_blank">Taiping Yao</a> (Tencent YoutuLab), Dr. <a href="https://yzhang2016.github.io/" target="_blank">Yong Zhang</a> (Tencent AILab), etc. 
@@ -325,7 +331,6 @@ $(function(){
 </ul>
 
 <div id="Contact" class='xtitle' >Contact</div>
-</div>
 <ul class="news" style="list-style: none;">
 <a href="yanzhiyuan1114@gmail.com">yanzhiyuan1114@gmail.com</a>; <a href="zhiyuanyan@stu.pku.edu.cn">zhiyuanyan@stu.pku.edu.cn</a>
 </ul>

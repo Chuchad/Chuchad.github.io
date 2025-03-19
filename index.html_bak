@@ -161,12 +161,6 @@
         }
     </style>
 </head>
-<div class="posts">
-  {% for post in site.posts %}
-
-    <p>{{ post.title }}</p>
-  {% endfor %}
-</div>
 <body>
     <div class="container">
         <div class="header">
@@ -183,7 +177,12 @@
         
         <h2>Publication</h2>
 
-        
+        <div class="posts">
+        {% for post in site.posts %}
+          
+        <p>{{ post.title }}</p>
+        {% endfor %}
+        </div>
         
         <h2>Experience</h2>
         <ul class="experience">
