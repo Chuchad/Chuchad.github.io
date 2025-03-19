@@ -97,6 +97,21 @@
         .post-hidden{
           display: none;
         }
+        .xcode a:after{
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition:top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+        /*background-color: rgba(225, 166, 121, 0.5);*/
+        background-color: #fff;
+        }
+        .xcode a:hover:after{
+          color: #fff;
+          /*color: #111;*/
+        }
         .entry{
         position: relative;
         top:0;
@@ -138,13 +153,13 @@
         <div class="posts">
           {% for post in site.posts %}
         
-            {% if post.is_show %}
-            <article class="post">
+          {% if post.is_show %}
+          <article class="post">
          
-            {% else %}
-            <article class="post unimportant post-hidden">
+          {% else %}
+          <article class="post unimportant post-hidden">
         
-            {% endif %}
+          {% endif %}
         
               <!-- <div style="position: relative; left:-50px; font-size: 18px;">{{post.year}}</div> -->
         
