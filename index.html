@@ -161,29 +161,6 @@
         }
     </style>
 </head>
-<div class="posts">
-  {% for post in site.posts %}
-
-    {% if post.is_show %}
-    <article class="post">
- 
-    {% else %}
-    <article class="post unimportant post-hidden">
-
-    {% endif %}
-
-      <!-- <div style="position: relative; left:-50px; font-size: 18px;">{{post.year}}</div> -->
-
-      <!-- <div style="text-align:center;"><img class="teaser-img" src="{{post.teaser}}"> </div> -->
-
-      <div class= "teaser-container">
-        <img class="teaser-left"  src="{{post.teaser}}">
-      </div>
-
-      <!-- <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a> -->
-    </article>
-  {% endfor %}
-</div>
 <body>
     <div class="container">
         <div class="header">
@@ -200,6 +177,12 @@
         
         <h2>Publication</h2>
 
+        <div class="posts">
+          {% for post in site.posts %}
+        
+            <p>{{ post.title }}</p>
+          {% endfor %}
+        </div>
         
         <h2>Experience</h2>
         <ul class="experience">
