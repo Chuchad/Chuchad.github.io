@@ -215,8 +215,10 @@ layout: default
                 
                 {% if post.arxiv%}
                 <a class='links' target="_blank" href="{{ post.arxiv_url }}" rel="paperurl">arXiv</a>
-                {% else %} 
+                {% elsif post.URL%} 
                 <a class='links' target="_blank" href="{{ post.URL }}" rel="paperurl">Xplore</a>
+                {% elsif post.springer%} 
+                <a class='links' target="_blank" href="{{ post.springer }}" rel="paperurl">Springer</a>
                 {% endif %}       
         
                 {% if post.extented_url%}
