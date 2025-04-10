@@ -2,7 +2,14 @@
 <html>
   <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
-
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "Beilin Chu",
+      "url" : "https://chuchad.github.io/"
+    }
+    </script>
     {% include meta.html %}
 
     <!--[if lt IE 9]>
