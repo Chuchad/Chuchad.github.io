@@ -161,6 +161,18 @@ layout: default
         /*font-style: italic;*/
         /*height: 2.6em*/
         }
+        #clustrmap-container {
+        width: 300px;
+        height: 300px;
+        margin: 30px auto;
+        position: relative;
+        overflow: hidden;
+        }
+        #clustrmap-container canvas {
+        width: 100% !important;
+        height: 100% !important;
+        display: block;
+        }
     </style>
 <!-- </head> -->
 <body>
@@ -270,5 +282,9 @@ layout: default
             alert("Email: " + email);
           }
         </script>
-    <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=enJRzG4dOlyFXoGCywATx3xWQnyI5nRcSa1k25roXFo"></script>
+        <div id="clustrmap-container">
+      <script type="text/javascript" id="clstr_globe"
+        src="//clustrmaps.com/globe.js?d=enJRzG4dOlyFXoGCywATx3xWQnyI5nRcSa1k25roXFo">
+      </script>
+        </div>
 </body>
